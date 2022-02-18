@@ -5,12 +5,21 @@
         <TargetFramework>net6.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
+        <NeutralLanguage>de</NeutralLanguage>
     </PropertyGroup>
 
     <ItemGroup>
       <Reference Include="MangadexAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
         <HintPath>..\..\MangaDexApi\MangadexAPI\bin\Debug\net6.0\MangadexAPI.dll</HintPath>
       </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="bin\Debug\net6.0-windows\image\master_key.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="bin\Debug\net6.0-windows\image\MangadexIcon.png" />
     </ItemGroup>
 
 </Project>
