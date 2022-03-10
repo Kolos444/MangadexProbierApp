@@ -21,6 +21,14 @@ public partial class MainWindow : Window{
 	}
 
 	private void MangaDropdow_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
-		
+		MangaDropdownMenu.Visibility = MangaDropdownMenu.Visibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed;
+	}
+
+	private void UIElement_OnMouseEnter(object sender, MouseEventArgs e) {
+		MainBorder.Background = new SolidColorBrush(Colors.Aqua);
+	}
+
+	private void UIElement_OnMouseLeave(object sender, MouseEventArgs e) {
+		MainBorder.Background = new SolidColorBrush(Colors.Red);
 	}
 }
