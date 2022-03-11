@@ -28,6 +28,9 @@
                         <ColumnDefinition Width="64" />
                         <ColumnDefinition Width="140" />
                         <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="90" />
+                        <ColumnDefinition Width="145" />
                         <ColumnDefinition Width="80" />
                     </Grid.ColumnDefinitions>
                     <Image Width="40"
@@ -44,9 +47,8 @@
                                TextAlignment="Center"
                                VerticalAlignment="Center"
                                Text="MangaDexApp" />
-                    <Grid Grid.Column="3" Name="MangaDropdownGrid">
-                        <TextBlock Grid.Column="0"
-                                   Name="MangaDropdown"
+                    <Grid Grid.Column="3" Name="MangaDropdownGrid" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Name="MangaDropdown"
                                    FontFamily="Ubuntu"
                                    Height="22"
                                    FontSize="18"
@@ -54,43 +56,84 @@
                                    TextAlignment="Right"
                                    VerticalAlignment="Center"
                                    MouseLeftButtonDown="MangaDropdow_OnMouseLeftButtonDown">
-                            <Run Text="&#xf02d;" FontFamily="{StaticResource FontAwesome}" />
+                            <Run Text="&#xf02d;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
                             <Run Text="Manga" />
-                            <Run Text="🢓" FontWeight="Black" />
+                            <Run Text="&#xf0d7;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" FontSize="12" />
                         </TextBlock>
                     </Grid>
-
-
+                    <Grid Grid.Column="4" Name="FollowsButton" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Name="Follows"
+                                   FontFamily="Ubuntu"
+                                   Height="22"
+                                   FontSize="18"
+                                   Foreground="#94999D"
+                                   TextAlignment="Right"
+                                   VerticalAlignment="Center"
+                                   MouseLeftButtonDown="Follows_OnMouseLeftButtonDown">
+                            <Run Text="&#xf02e;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
+                            <Run Text="Follows" />
+                        </TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="5" Name="CommunityDropdownGrid" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Name="CommunityDropdown"
+                                   FontFamily="Ubuntu"
+                                   Height="22"
+                                   FontSize="18"
+                                   Foreground="#94999D"
+                                   TextAlignment="Right"
+                                   VerticalAlignment="Center"
+                                   MouseLeftButtonDown="CommunityDropdown_OnMouseLeftButtonDown">
+                            <Run Text="&#xf0c0;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
+                            <Run Text="Community" />
+                            <Run Text="&#xf0d7;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" FontSize="12" />
+                        </TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="6" Name="InfoDropdownGrid" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Name="InfoDropdown"
+                                   FontFamily="Ubuntu"
+                                   Height="22"
+                                   FontSize="18"
+                                   Foreground="#94999D"
+                                   TextAlignment="Right"
+                                   VerticalAlignment="Center"
+                                   MouseLeftButtonDown="InfoDropdown_OnMouseLeftButtonDown">
+                            <Run Text="&#xf05a;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
+                            <Run Text="Info" />
+                            <Run Text="&#xf0d7;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" FontSize="12" />
+                        </TextBlock>
+                    </Grid>
                 </Grid>
             </Border>
 
+            <!-- Manga Dropdownmenü -->
             <Border Margin="229,40,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Width="150" Height="200"
                     Background="#3A3F44"
                     CornerRadius="5"
-                    Name="MangaDropdownMenu">
-                <Grid Margin="20,12,0,0">
-                    <Grid VerticalAlignment="Top" Name="MangaTitles">
+                    Name="MangaDropdownMenu"
+                    BorderBrush="Black"
+                    BorderThickness="0.7"
+                    Visibility="Collapsed">
+                <Grid Margin="20,12,0,0" HorizontalAlignment="Left">
+                    <Grid VerticalAlignment="Top" Name="MangaTitles" MouseRightButtonDown="MangaTitles_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
                         <TextBlock Foreground="#C8C8C8"
                                    FontSize="18"
                                    VerticalAlignment="Center"
-                                   Text="&#xf02d;" FontFamily="{StaticResource FontAwesome}" />
+                                   Text="&#xf02d;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
                         <TextBlock Text="Titles"
-                                   MouseEnter="UIElement_OnMouseEnter"
-                                   MouseLeave="UIElement_OnMouseLeave"
                                    Foreground="#C8C8C8"
                                    FontSize="18"
                                    VerticalAlignment="Center"
                                    FontFamily="Ubuntu"
                                    Margin="30,0,0,0" />
                     </Grid>
-                    <Grid Margin="0,30,0,0" VerticalAlignment="Top" Name="MangaUpdates">
+                    <Grid Margin="0,30,0,0" VerticalAlignment="Top" Name="MangaUpdates" MouseRightButtonDown="MangaUpdates_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
                         <TextBlock Foreground="#C8C8C8"
                                    FontSize="18"
                                    VerticalAlignment="Center"
-                                   Text="&#xf021;" FontFamily="{StaticResource FontAwesome}" />
+                                   Text="&#xf021;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
                         <TextBlock Text="Updates"
                                    Foreground="#C8C8C8"
                                    FontSize="18"
@@ -99,11 +142,11 @@
                                    Margin="30,0,0,0" />
 
                     </Grid>
-                    <Grid Margin="0,60,0,0" VerticalAlignment="Top" Name="MangaSearch">
+                    <Grid Margin="0,60,0,0" VerticalAlignment="Top" Name="MangaSearch" MouseRightButtonDown="MangaSearch_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
                         <TextBlock Foreground="#C8C8C8"
                                    FontSize="18"
                                    VerticalAlignment="Center"
-                                   Text="&#xf002;" FontFamily="{StaticResource FontAwesome}" />
+                                   Text="&#xf002;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
                         <TextBlock Text="Search"
                                    Foreground="#C8C8C8"
                                    FontSize="18"
@@ -112,11 +155,11 @@
                                    Margin="30,0,0,0" />
 
                     </Grid>
-                    <Grid Margin="0,90,0,0" VerticalAlignment="Top" Name="MangaFeatured">
+                    <Grid Margin="0,90,0,0" VerticalAlignment="Top" Name="MangaFeatured" MouseRightButtonDown="MangaFeatured_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
                         <TextBlock Foreground="#C8C8C8"
                                    FontSize="18"
                                    VerticalAlignment="Center"
-                                   Text="&#xf26c;" FontFamily="{StaticResource FontAwesome}" />
+                                   Text="&#xf26c;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
                         <TextBlock Text="Featured"
                                    Foreground="#C8C8C8"
                                    FontSize="18"
@@ -125,11 +168,11 @@
                                    Margin="30,0,0,0" />
 
                     </Grid>
-                    <Grid Margin="0,120,0,0" VerticalAlignment="Top" Name="MangaRandom">
+                    <Grid Margin="0,120,0,0" VerticalAlignment="Top" Name="MangaRandom" MouseRightButtonDown="MangaRandom_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
                         <TextBlock Foreground="#C8C8C8"
                                    FontSize="18"
                                    VerticalAlignment="Center"
-                                   Text="&#xf059;" FontFamily="{StaticResource FontAwesome}" />
+                                   Text="&#xf059;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
                         <TextBlock Text="Random"
                                    Foreground="#C8C8C8"
                                    FontSize="18"
@@ -138,11 +181,11 @@
                                    Margin="30,0,0,0" />
 
                     </Grid>
-                    <Grid Margin="0,150,0,0" VerticalAlignment="Top" Name="MangaAdd">
+                    <Grid Margin="0,150,0,0" VerticalAlignment="Top" Name="MangaAdd" MouseRightButtonDown="MangaAdd_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
                         <TextBlock Foreground="#C8C8C8"
                                    FontSize="18"
                                    VerticalAlignment="Center"
-                                   Text="&#xf055;" FontFamily="{StaticResource FontAwesome}" />
+                                   Text="&#xf055;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
                         <TextBlock Text="Add"
                                    Foreground="#C8C8C8"
                                    FontSize="18"
@@ -153,6 +196,204 @@
                 </Grid>
             </Border>
 
+            <!-- Community Dropdownmenü -->
+            <Border Margin="417,40,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Width="150" Height="260"
+                    Background="#3A3F44"
+                    CornerRadius="5"
+                    Name="CommunityDropdownMenu"
+                    BorderBrush="Black"
+                    BorderThickness="0.7"
+                    Visibility="Collapsed">
+                <Grid Margin="20,12,0,0" HorizontalAlignment="Left">
+                    <Grid VerticalAlignment="Top" Name="CommunityForums" MouseRightButtonDown="CommunityForums_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   Text="&#xf66f;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
+                        <TextBlock Text="Forums"
+                                   Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Ubuntu"
+                                   Margin="30,0,0,0" />
+                    </Grid>
+                    <Grid Margin="0,30,0,0" VerticalAlignment="Top" Name="CommunityGroups" MouseRightButtonDown="CommunityGroups_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   Text="&#xf0c0;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
+                        <TextBlock Text="Groups"
+                                   Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Ubuntu"
+                                   Margin="30,0,0,0" />
+                    </Grid>
+                    <Grid Margin="0,60,0,0" VerticalAlignment="Top" Name="CommunityUsers" MouseRightButtonDown="CommunityUsers_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   Text="&#xf007;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
+                        <TextBlock Text="Users"
+                                   Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Ubuntu"
+                                   Margin="30,0,0,0" />
+                    </Grid>
+                    <Grid Margin="0,90,0,0" VerticalAlignment="Top" Name="CommunityDiscord" MouseRightButtonDown="CommunityDiscord_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   Text="&#xf392;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Brands-Regular-400.otf#Font Awesome 6 Brands Regular" />
+                        <TextBlock Text="Discord"
+                                   Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Ubuntu"
+                                   Margin="30,0,0,0" />
+                    </Grid>
+                    <Grid Margin="0,120,0,0" VerticalAlignment="Top" Name="CommunityTwitter" MouseRightButtonDown="CommunityTwitter_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   Text="&#xf099;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Brands-Regular-400.otf#Font Awesome 6 Brands Regular" />
+                        <TextBlock Text="Twitter"
+                                   Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Ubuntu"
+                                   Margin="30,0,0,0" />
+
+                    </Grid>
+                    <Grid Margin="0,150,0,0" VerticalAlignment="Top" Name="CommunityReddit" MouseLeftButtonDown="CommunityReddit_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   Text="&#xf1a1;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Brands-Regular-400.otf#Font Awesome 6 Brands Regular" />
+                        <TextBlock Text="Reddit"
+                                   Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Ubuntu"
+                                   Margin="30,0,0,0" />
+                    </Grid>                    
+                    <Grid Margin="0,180,0,0" VerticalAlignment="Top" Name="CommunityTumblr" MouseRightButtonDown="CommunityTumblr_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   Text="&#xf173;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Brands-Regular-400.otf#Font Awesome 6 Brands Regular" />
+                        <TextBlock Text="Tumblr"
+                                   Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Ubuntu"
+                                   Margin="30,0,0,0" />
+                    </Grid>                    
+                    <Grid Margin="0,210,0,0" VerticalAlignment="Top" Name="CommunityIRC" MouseRightButtonDown="CommunityIRC_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   Text="&#xf292;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
+                        <TextBlock Text="IRC"
+                                   Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Ubuntu"
+                                   Margin="30,0,0,0" />
+                    </Grid>
+                </Grid>
+            </Border>
+            
+            <!-- Community Dropdownmenü -->
+            <Border Margin="565,40,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Width="150" Height="200"
+                    Background="#3A3F44"
+                    CornerRadius="5"
+                    Name="InfoDropdownMenu"
+                    BorderBrush="Black"
+                    BorderThickness="0.7"
+                    Visibility="Collapsed">
+                <Grid Margin="20,12,0,0" HorizontalAlignment="Left">
+                    <Grid VerticalAlignment="Top" Name="Stats" MouseRightButtonDown="CommunityForums_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   Text="&#xf46d;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
+                        <TextBlock Text="Stats"
+                                   Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Ubuntu"
+                                   Margin="30,0,0,0" />
+                    </Grid>
+                    <Grid VerticalAlignment="Top" Name="Info" Margin="0,30,0,0" MouseRightButtonDown="CommunityForums_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   Text="&#xf03a;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
+                        <TextBlock Text="Rules"
+                                   Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Ubuntu"
+                                   Margin="30,0,0,0" />
+                    </Grid>
+                    <Grid VerticalAlignment="Top" Name="About" Margin="0,60,0,0" MouseRightButtonDown="CommunityForums_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   Text="&#xf129;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
+                        <TextBlock Text="About"
+                                   Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Ubuntu"
+                                   Margin="30,0,0,0" />
+                    </Grid>
+                    <Grid VerticalAlignment="Top" Name="Changelog" Margin="0,90,0,0" MouseRightButtonDown="CommunityForums_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   Text="&#xf121;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid" />
+                        <TextBlock Text="Change log"
+                                   Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Ubuntu"
+                                   Margin="30,0,0,0" />
+                    </Grid>
+                    <Grid VerticalAlignment="Top" Name="Affiliates" Margin="0,120,0,0" MouseRightButtonDown="CommunityForums_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   Text="&#xf2b5;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid"/>
+                        <TextBlock Text="Affiliates"
+                                   Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Ubuntu"
+                                   Margin="30,0,0,0" />
+                    </Grid>
+                    <Grid VerticalAlignment="Top" Name="Tutorial" Margin="0,150,0,0" MouseRightButtonDown="CommunityForums_RightClickDown" Cursor="Hand" HorizontalAlignment="Left">
+                        <TextBlock Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   Text="&#xf128;" FontFamily="bin/Debug/net6.0-windows/fonts/Font Awesome 6 Free-Solid-900.otf#Font Awesome 6 Free Solid"/>
+                        <TextBlock Text="Tutorial"
+                                   Foreground="#C8C8C8"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Ubuntu"
+                                   Margin="30,0,0,0" />
+                    </Grid>
+                </Grid>
+            </Border>
         </Grid>
     </Border>
 

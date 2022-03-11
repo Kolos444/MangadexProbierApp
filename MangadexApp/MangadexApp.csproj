@@ -44,4 +44,8 @@
       <Resource Include="bin\Debug\net6.0-windows\fonts\Font Awesome 6 Free-Solid-900.otf" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Resource Include="bin\Debug\net6.0-windows\fonts\Font Awesome 6 Brands-Regular-400.otf" />
+    </ItemGroup>
+
 </Project>
